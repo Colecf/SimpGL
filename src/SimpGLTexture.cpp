@@ -7,8 +7,7 @@
 //
 
 #include "SimpGLTexture.h"
-#include "libpng/png.h"
-#include "libpng/pnginfo.h"
+#include <libpng/png.h>
 #include <iostream>
 
 bool SimpGLTexture::loadPngImage(char *name, int &outWidth, int &outHeight, bool &outHasAlpha, GLubyte **outData) {

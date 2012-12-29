@@ -9,6 +9,7 @@
 #include "SimpGLSprite.h"
 #include <iostream>
 
+
 SimpGLSprite::SimpGLSprite(std::string fileName)
 {
     x = 0;

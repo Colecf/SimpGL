@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>SimpGLTest.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>EDF90362168FB13200E97994</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EDF9039B168FB63500E97994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
