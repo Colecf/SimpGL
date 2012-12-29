@@ -1,0 +1,251 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDF90377168FB13F00E97994 /* OpenGLHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */; };
+		EDF90378168FB13F00E97994 /* SimpGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036B168FB13F00E97994 /* SimpGL.cpp */; };
+		EDF90379168FB13F00E97994 /* SimpGL.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036C168FB13F00E97994 /* SimpGL.h */; };
+		EDF9037A168FB13F00E97994 /* SimpGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */; };
+		EDF9037B168FB13F00E97994 /* SimpGLFont.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036E168FB13F00E97994 /* SimpGLFont.h */; };
+		EDF9037C168FB13F00E97994 /* SimpGLKeys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */; };
+		EDF9037D168FB13F00E97994 /* SimpGLKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90370168FB13F00E97994 /* SimpGLKeys.h */; };
+		EDF9037E168FB13F00E97994 /* SimpGLMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */; };
+		EDF9037F168FB13F00E97994 /* SimpGLMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90372168FB13F00E97994 /* SimpGLMenu.h */; };
+		EDF90380168FB13F00E97994 /* SimpGLSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */; };
+		EDF90381168FB13F00E97994 /* SimpGLSprite.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90374168FB13F00E97994 /* SimpGLSprite.h */; };
+		EDF90382168FB13F00E97994 /* SimpGLTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90375168FB13F00E97994 /* SimpGLTexture.cpp */; };
+		EDF90383168FB13F00E97994 /* SimpGLTexture.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90376168FB13F00E97994 /* SimpGLTexture.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDF90363168FB13200E97994 /* libSimpGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLHeaders.h; path = ../../src/OpenGLHeaders.h; sourceTree = "<group>"; };
+		EDF9036B168FB13F00E97994 /* SimpGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGL.cpp; path = ../../src/SimpGL.cpp; sourceTree = "<group>"; };
+		EDF9036C168FB13F00E97994 /* SimpGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGL.h; path = ../../src/SimpGL.h; sourceTree = "<group>"; };
+		EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLFont.cpp; path = ../../src/SimpGLFont.cpp; sourceTree = "<group>"; };
+		EDF9036E168FB13F00E97994 /* SimpGLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLFont.h; path = ../../src/SimpGLFont.h; sourceTree = "<group>"; };
+		EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLKeys.cpp; path = ../../src/SimpGLKeys.cpp; sourceTree = "<group>"; };
+		EDF90370168FB13F00E97994 /* SimpGLKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLKeys.h; path = ../../src/SimpGLKeys.h; sourceTree = "<group>"; };
+		EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLMenu.cpp; path = ../../src/SimpGLMenu.cpp; sourceTree = "<group>"; };
+		EDF90372168FB13F00E97994 /* SimpGLMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLMenu.h; path = ../../src/SimpGLMenu.h; sourceTree = "<group>"; };
+		EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLSprite.cpp; path = ../../src/SimpGLSprite.cpp; sourceTree = "<group>"; };
+		EDF90374168FB13F00E97994 /* SimpGLSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLSprite.h; path = ../../src/SimpGLSprite.h; sourceTree = "<group>"; };
+		EDF90375168FB13F00E97994 /* SimpGLTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLTexture.cpp; path = ../../src/SimpGLTexture.cpp; sourceTree = "<group>"; };
+		EDF90376168FB13F00E97994 /* SimpGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLTexture.h; path = ../../src/SimpGLTexture.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDF90360168FB13200E97994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDF90358168FB13200E97994 = {
+			isa = PBXGroup;
+			children = (
+				EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */,
+				EDF9036B168FB13F00E97994 /* SimpGL.cpp */,
+				EDF9036C168FB13F00E97994 /* SimpGL.h */,
+				EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */,
+				EDF9036E168FB13F00E97994 /* SimpGLFont.h */,
+				EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */,
+				EDF90370168FB13F00E97994 /* SimpGLKeys.h */,
+				EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */,
+				EDF90372168FB13F00E97994 /* SimpGLMenu.h */,
+				EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */,
+				EDF90374168FB13F00E97994 /* SimpGLSprite.h */,
+				EDF90375168FB13F00E97994 /* SimpGLTexture.cpp */,
+				EDF90376168FB13F00E97994 /* SimpGLTexture.h */,
+				EDF90364168FB13200E97994 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDF90364168FB13200E97994 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDF90363168FB13200E97994 /* libSimpGL.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EDF90361168FB13200E97994 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF90377168FB13F00E97994 /* OpenGLHeaders.h in Headers */,
+				EDF90379168FB13F00E97994 /* SimpGL.h in Headers */,
+				EDF9037B168FB13F00E97994 /* SimpGLFont.h in Headers */,
+				EDF9037D168FB13F00E97994 /* SimpGLKeys.h in Headers */,
+				EDF9037F168FB13F00E97994 /* SimpGLMenu.h in Headers */,
+				EDF90381168FB13F00E97994 /* SimpGLSprite.h in Headers */,
+				EDF90383168FB13F00E97994 /* SimpGLTexture.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EDF90362168FB13200E97994 /* SimpGL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDF90367168FB13200E97994 /* Build configuration list for PBXNativeTarget "SimpGL" */;
+			buildPhases = (
+				EDF9035F168FB13200E97994 /* Sources */,
+				EDF90360168FB13200E97994 /* Frameworks */,
+				EDF90361168FB13200E97994 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpGL;
+			productName = SimpGL;
+			productReference = EDF90363168FB13200E97994 /* libSimpGL.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDF9035A168FB13200E97994 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Cole Faust";
+			};
+			buildConfigurationList = EDF9035D168FB13200E97994 /* Build configuration list for PBXProject "SimpGL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EDF90358168FB13200E97994;
+			productRefGroup = EDF90364168FB13200E97994 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDF90362168FB13200E97994 /* SimpGL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDF9035F168FB13200E97994 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDF90378168FB13F00E97994 /* SimpGL.cpp in Sources */,
+				EDF9037A168FB13F00E97994 /* SimpGLFont.cpp in Sources */,
+				EDF9037C168FB13F00E97994 /* SimpGLKeys.cpp in Sources */,
+				EDF9037E168FB13F00E97994 /* SimpGLMenu.cpp in Sources */,
+				EDF90380168FB13F00E97994 /* SimpGLSprite.cpp in Sources */,
+				EDF90382168FB13F00E97994 /* SimpGLTexture.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EDF90365168FB13200E97994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EDF90366168FB13200E97994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EDF90368168FB13200E97994 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDF90369168FB13200E97994 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDF9035D168FB13200E97994 /* Build configuration list for PBXProject "SimpGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF90365168FB13200E97994 /* Debug */,
+				EDF90366168FB13200E97994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDF90367168FB13200E97994 /* Build configuration list for PBXNativeTarget "SimpGL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDF90368168FB13200E97994 /* Debug */,
+				EDF90369168FB13200E97994 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDF9035A168FB13200E97994 /* Project object */;
+}
