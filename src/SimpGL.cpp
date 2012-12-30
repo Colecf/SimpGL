@@ -72,6 +72,59 @@ void SimpGLNode::setX(int newX) { x = newX; }
 void SimpGLNode::setY(int newY) { y = newY; }
 void SimpGLNode::setRotation(int newRotation) { rotation = newRotation; }
 void SimpGLNode::setTag(int newTag) { tag = newTag; }
+
+void SimpGLUpdateManager::addUpdate(SimpGLNode* newToUpdate)
+{
+    toUpdate.push_back(newToUpdate);
+}
+void SimpGLUpdateManager::addRender(SimpGLNode* newToRender)
+{
+    toRender.push_back(newToRender);
+}
+void SimpGLUpdateManager::removeUpdate(SimpGLNode* toRemove)
+{
+    for (int i=0; i<toUpdate.size(); i++) {
+        if (toUpdate.at(i) == toRemove) {
+            toUpdate.erase(toUpdate.begin()+i);
+            return;
+        }
+    }
+}
+void SimpGLUpdateManager::removeRender(SimpGLNode* toRemove)
+{
+    for (int i=0; i<toRender.size(); i++) {
+        if (toRender.at(i) == toRemove) {
+            toRender.erase(toUpdate.begin()+i);
+            return;
+        }
+    }
+}
+void SimpGLUpdateManager::update(int value)
+{
+    glutTimerFunc(1000/60, &SimpGLUpdateManager::update, 0);
+    
+    for (int i=0; i<toUpdate.size(); i++) {
+        toUpdate.at(i)->update();
+    }
+    glutPostRedisplay();
+}
+void SimpGLUpdateManager::render()
+{
+    glLoadIdentity();
+    glClear( GL_COLOR_BUFFER_BIT );
+    
+    for (int i=0; i<toRender.size(); i++) {
+        toRender.at(i)->render();
+    }
+    
+    glutSwapBuffers();
+}
+std::vector<SimpGLNode*> SimpGLUpdateManager::toUpdate;
+std::vector<SimpGLNode*> SimpGLUpdateManager::toRender;
+
+
+
+
 //Inits OpenGL and GLUT
 //Parameters:
 //width: screen width
@@ -125,6 +178,9 @@ bool SimpGLinitGL(int width, int height, int argc, char* argv[])
             keySpecialStates[i] = false;
         }
     }
+    
+    glutDisplayFunc(&SimpGLUpdateManager::render);
+    glutTimerFunc(1000/60, &SimpGLUpdateManager::update, 0);
     
     return true;
 }

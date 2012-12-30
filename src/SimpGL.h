@@ -40,6 +40,23 @@ protected:
     int x, y, rotation, tag;
 };
 
+class SimpGLUpdateManager
+{
+public:
+    static void addUpdate(SimpGLNode* newToUpdate);
+    static void addRender(SimpGLNode* newToRender);
+    static void removeUpdate(SimpGLNode* toRemove);
+    static void removeRender(SimpGLNode* toRemove);
+    
+    //Don't ever call these, they're for GLUT
+    static void update(int value);
+    static void render();
+    
+private:
+    static std::vector<SimpGLNode*> toUpdate;
+    static std::vector<SimpGLNode*> toRender;
+};
+
 bool SimpGLinitGL(int width, int height, int argc, char* argv[]);
 void processKeypress(unsigned char c, int &x, int &y);
 
