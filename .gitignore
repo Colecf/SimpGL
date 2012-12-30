@@ -14,3 +14,6 @@
 
 .DS_Store
 *.xcuserdatad*
+*.xcuserstate
+
+xcode/SimpGL/SimpGL.xcodeproj/project.xcworkspace/xcuserdata/Cole.xcuserdatad/UserInterfaceState.xcuserstate
