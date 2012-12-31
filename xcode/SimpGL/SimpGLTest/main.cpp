@@ -18,7 +18,7 @@ public:
     {
         std::cout << "Hello, World!\n" << std::endl;
         
-        SimpGLinitGL(640, 480, argc, argv);
+        SimpGLinitGL(640, 480, argc, argv, "");
         SimpGLUpdateManager::addRender(this);
         
         SimpGLSprite* test = new SimpGLSprite("pngtest.png");

@@ -9,6 +9,7 @@
 #include "SimpGL.h"
 #include "OpenGLHeaders.h"
 #include "SimpGLKeys.h"
+#include "SimpGLTexture.h"
 
 int screenWidth;
 int screenHeight;
@@ -133,10 +134,11 @@ std::vector<SimpGLNode*> SimpGLUpdateManager::toRender;
 //fps: the frames per second you want the program to run at
 //updateFunc: function that will be called every frame specified by your frames per second
 //argc/argv: the argc/argv from your main, required by glut.
-bool SimpGLinitGL(int width, int height, int argc, char* argv[])
+bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string newResourcePath)
 {
     screenHeight = height;
     screenWidth = width;
+    SimpGLTextureCache::getInstance()->setResourcePath(newResourcePath);
     glutInit( &argc, argv );
     
 	//Create Double Buffered Window

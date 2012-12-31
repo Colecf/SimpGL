@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <vector>
+#include <string>
 
 class SimpGLNode
 {
@@ -57,7 +58,7 @@ private:
     static std::vector<SimpGLNode*> toRender;
 };
 
-bool SimpGLinitGL(int width, int height, int argc, char* argv[]);
+bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string newResourcePath);
 void processKeypress(unsigned char c, int &x, int &y);
 
 #endif

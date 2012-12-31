@@ -209,7 +209,7 @@ GLuint SimpGLTexture::getTexID() { return texID; }
 //---------------------------------------------------------------
 
 SimpGLTextureCache* SimpGLTextureCache::instance = NULL;
-
+std::string SimpGLTextureCache::resourcePath;
 
 SimpGLTextureCache* SimpGLTextureCache::getInstance()
 {
@@ -222,6 +222,7 @@ SimpGLTextureCache* SimpGLTextureCache::getInstance()
 
 SimpGLTexture* SimpGLTextureCache::getTextureFromFileName(std::string fileName)
 {
+    fileName = resourcePath + fileName;
     SimpGLTexture* texture;
     for (int i=0; i<textures.size(); i++) {
         texture = textures.at(i);
@@ -260,3 +261,11 @@ void SimpGLTextureCache::releaseTexture(SimpGLTexture* texToRelease)
     delete texture;
 }
 
+void SimpGLTextureCache::setResourcePath(std::string newResourcePath)
+{
+    resourcePath = newResourcePath;
+}
+std::string SimpGLTextureCache::getResourcePath()
+{
+    return resourcePath;
+}
