@@ -95,7 +95,7 @@ void SimpGLUpdateManager::removeRender(SimpGLNode* toRemove)
 {
     for (int i=0; i<toRender.size(); i++) {
         if (toRender.at(i) == toRemove) {
-            toRender.erase(toUpdate.begin()+i);
+            toRender.erase(toRender.begin()+i);
             return;
         }
     }
