@@ -41,7 +41,7 @@ protected:
     int x, y, rotation, tag;
 };
 
-class SimpGLUpdateManager
+class SimpGLManager
 {
 public:
     static void addUpdate(SimpGLNode* newToUpdate);
@@ -49,8 +49,8 @@ public:
     static void removeUpdate(SimpGLNode* toRemove);
     static void removeRender(SimpGLNode* toRemove);
     
-    //Don't ever call these, they're for GLUT
-    static void update(int value);
+    //Don't ever call these, they're for the game loop
+    static void update();
     static void render();
     
 private:
@@ -58,7 +58,7 @@ private:
     static std::vector<SimpGLNode*> toRender;
 };
 
-bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string newResourcePath);
-void processKeypress(unsigned char c, int &x, int &y);
+bool SimpGLinitGL(int width, int height, std::string newResourcePath, std::string title);
+void SimpGLMainLoop();
 
 #endif

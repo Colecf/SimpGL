@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDE0E9FC16ACA5D900E88DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */; };
+		EDE0EA0616ACA6FB00E88DEA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */; };
 		EDF90377168FB13F00E97994 /* OpenGLHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */; };
 		EDF90378168FB13F00E97994 /* SimpGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036B168FB13F00E97994 /* SimpGL.cpp */; };
 		EDF90379168FB13F00E97994 /* SimpGL.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036C168FB13F00E97994 /* SimpGL.h */; };
-		EDF9037A168FB13F00E97994 /* SimpGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */; };
-		EDF9037B168FB13F00E97994 /* SimpGLFont.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036E168FB13F00E97994 /* SimpGLFont.h */; };
-		EDF9037C168FB13F00E97994 /* SimpGLKeys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */; };
-		EDF9037D168FB13F00E97994 /* SimpGLKeys.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90370168FB13F00E97994 /* SimpGLKeys.h */; };
 		EDF9037E168FB13F00E97994 /* SimpGLMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */; };
 		EDF9037F168FB13F00E97994 /* SimpGLMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF90372168FB13F00E97994 /* SimpGLMenu.h */; };
 		EDF90380168FB13F00E97994 /* SimpGLSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */; };
@@ -23,14 +21,11 @@
 		EDF90397168FB5F000E97994 /* libpng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90396168FB5F000E97994 /* libpng.framework */; };
 		EDF903A0168FB63500E97994 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9039F168FB63500E97994 /* main.cpp */; };
 		EDF903A6168FB64300E97994 /* SimpGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036B168FB13F00E97994 /* SimpGL.cpp */; };
-		EDF903A7168FB64300E97994 /* SimpGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */; };
-		EDF903A8168FB64300E97994 /* SimpGLKeys.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */; };
 		EDF903A9168FB64300E97994 /* SimpGLMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */; };
 		EDF903AA168FB64300E97994 /* SimpGLSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */; };
 		EDF903AB168FB64300E97994 /* SimpGLTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDF90375168FB13F00E97994 /* SimpGLTexture.cpp */; };
 		EDF903AC168FBB4100E97994 /* libpng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF90396168FB5F000E97994 /* libpng.framework */; };
 		EDF903AE168FBB7200E97994 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF903AD168FBB7200E97994 /* OpenGL.framework */; };
-		EDF903B0168FBB7500E97994 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF903AF168FBB7500E97994 /* GLUT.framework */; };
 		EDF903B2168FBC5600E97994 /* libpng.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = EDF90396168FB5F000E97994 /* libpng.framework */; };
 		EDF903B5168FC25600E97994 /* pngtest.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = EDF903B3168FC23B00E97994 /* pngtest.png */; };
 /* End PBXBuildFile section */
@@ -59,14 +54,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		EDF90363168FB13200E97994 /* libSimpGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OpenGLHeaders.h; path = ../../src/OpenGLHeaders.h; sourceTree = "<group>"; };
 		EDF9036B168FB13F00E97994 /* SimpGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGL.cpp; path = ../../src/SimpGL.cpp; sourceTree = "<group>"; };
 		EDF9036C168FB13F00E97994 /* SimpGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGL.h; path = ../../src/SimpGL.h; sourceTree = "<group>"; };
-		EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLFont.cpp; path = ../../src/SimpGLFont.cpp; sourceTree = "<group>"; };
-		EDF9036E168FB13F00E97994 /* SimpGLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLFont.h; path = ../../src/SimpGLFont.h; sourceTree = "<group>"; };
-		EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLKeys.cpp; path = ../../src/SimpGLKeys.cpp; sourceTree = "<group>"; };
-		EDF90370168FB13F00E97994 /* SimpGLKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLKeys.h; path = ../../src/SimpGLKeys.h; sourceTree = "<group>"; };
 		EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLMenu.cpp; path = ../../src/SimpGLMenu.cpp; sourceTree = "<group>"; };
 		EDF90372168FB13F00E97994 /* SimpGLMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLMenu.h; path = ../../src/SimpGLMenu.h; sourceTree = "<group>"; };
 		EDF90373168FB13F00E97994 /* SimpGLSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLSprite.cpp; path = ../../src/SimpGLSprite.cpp; sourceTree = "<group>"; };
@@ -78,7 +71,6 @@
 		EDF9039F168FB63500E97994 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EDF903A1168FB63500E97994 /* SimpGLTest.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SimpGLTest.1; sourceTree = "<group>"; };
 		EDF903AD168FBB7200E97994 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		EDF903AF168FBB7500E97994 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		EDF903B3168FC23B00E97994 /* pngtest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pngtest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDF903B0168FBB7500E97994 /* GLUT.framework in Frameworks */,
+				EDE0EA0616ACA6FB00E88DEA /* IOKit.framework in Frameworks */,
+				EDE0E9FC16ACA5D900E88DEA /* Cocoa.framework in Frameworks */,
 				EDF903AE168FBB7200E97994 /* OpenGL.framework in Frameworks */,
 				EDF903AC168FBB4100E97994 /* libpng.framework in Frameworks */,
 			);
@@ -107,16 +100,13 @@
 		EDF90358168FB13200E97994 = {
 			isa = PBXGroup;
 			children = (
-				EDF903AF168FBB7500E97994 /* GLUT.framework */,
+				EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */,
+				EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */,
 				EDF903AD168FBB7200E97994 /* OpenGL.framework */,
 				EDF90396168FB5F000E97994 /* libpng.framework */,
 				EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */,
 				EDF9036C168FB13F00E97994 /* SimpGL.h */,
 				EDF9036B168FB13F00E97994 /* SimpGL.cpp */,
-				EDF9036E168FB13F00E97994 /* SimpGLFont.h */,
-				EDF9036D168FB13F00E97994 /* SimpGLFont.cpp */,
-				EDF90370168FB13F00E97994 /* SimpGLKeys.h */,
-				EDF9036F168FB13F00E97994 /* SimpGLKeys.cpp */,
 				EDF90372168FB13F00E97994 /* SimpGLMenu.h */,
 				EDF90371168FB13F00E97994 /* SimpGLMenu.cpp */,
 				EDF90374168FB13F00E97994 /* SimpGLSprite.h */,
@@ -156,8 +146,6 @@
 			files = (
 				EDF90377168FB13F00E97994 /* OpenGLHeaders.h in Headers */,
 				EDF90379168FB13F00E97994 /* SimpGL.h in Headers */,
-				EDF9037B168FB13F00E97994 /* SimpGLFont.h in Headers */,
-				EDF9037D168FB13F00E97994 /* SimpGLKeys.h in Headers */,
 				EDF9037F168FB13F00E97994 /* SimpGLMenu.h in Headers */,
 				EDF90381168FB13F00E97994 /* SimpGLSprite.h in Headers */,
 				EDF90383168FB13F00E97994 /* SimpGLTexture.h in Headers */,
@@ -235,8 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDF90378168FB13F00E97994 /* SimpGL.cpp in Sources */,
-				EDF9037A168FB13F00E97994 /* SimpGLFont.cpp in Sources */,
-				EDF9037C168FB13F00E97994 /* SimpGLKeys.cpp in Sources */,
 				EDF9037E168FB13F00E97994 /* SimpGLMenu.cpp in Sources */,
 				EDF90380168FB13F00E97994 /* SimpGLSprite.cpp in Sources */,
 				EDF90382168FB13F00E97994 /* SimpGLTexture.cpp in Sources */,
@@ -249,8 +235,6 @@
 			files = (
 				EDF903A0168FB63500E97994 /* main.cpp in Sources */,
 				EDF903A6168FB64300E97994 /* SimpGL.cpp in Sources */,
-				EDF903A7168FB64300E97994 /* SimpGLFont.cpp in Sources */,
-				EDF903A8168FB64300E97994 /* SimpGLKeys.cpp in Sources */,
 				EDF903A9168FB64300E97994 /* SimpGLMenu.cpp in Sources */,
 				EDF903AA168FB64300E97994 /* SimpGLSprite.cpp in Sources */,
 				EDF903AB168FB64300E97994 /* SimpGLTexture.cpp in Sources */,
@@ -342,9 +326,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lm",
+					/usr/local/lib/libglfw.a,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -357,9 +347,15 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SDKROOT)/usr/lib/system\"",
+				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lm",
+					/usr/local/lib/libglfw.a,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -393,6 +389,7 @@
 				EDF903A5168FB63500E97994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

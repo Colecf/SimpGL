@@ -14,19 +14,18 @@
 class MainScene : public SimpGLNode
 {
 public:
-    void run(int argc, char * argv[])
+    MainScene()
     {
         std::cout << "Hello, World!\n" << std::endl;
         
-        SimpGLinitGL(640, 480, argc, argv, "");
-        SimpGLUpdateManager::addRender(this);
+        SimpGLinitGL(640, 480, "", "Test");
+        SimpGLManager::addRender(this);
+        SimpGLManager::addUpdate(this);
         
         SimpGLSprite* test = new SimpGLSprite("pngtest.png");
         test->setX(200);
         test->setY(200);
         addChild(test);
-        
-        glutMainLoop();
     }
     
     void render()
@@ -43,13 +42,18 @@ public:
         glEnd();
     }
     
+    void update()
+    {
+        std::cout << "here" << std::endl;
+    }
+    
     
 };
 
 int main(int argc, char * argv[])
 {
-    MainScene *scene = new MainScene;
-    scene->run(argc, argv);
+    new MainScene;
+    SimpGLMainLoop();
     return 0;
 }
 

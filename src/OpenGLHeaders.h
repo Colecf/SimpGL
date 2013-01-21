@@ -12,20 +12,19 @@
 
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-#include <GLUT/glut.h>
 
 #elif _WIN32
 
 #include <windows.h>
-#include <GL/glut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 
 #else
 
-#include <GL/glut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 
 #endif
+
+#include <GL/glfw.h>
 #endif

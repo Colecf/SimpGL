@@ -8,8 +8,8 @@
 
 #include "SimpGL.h"
 #include "OpenGLHeaders.h"
-#include "SimpGLKeys.h"
 #include "SimpGLTexture.h"
+#include <iostream>
 
 int screenWidth;
 int screenHeight;
@@ -74,15 +74,15 @@ void SimpGLNode::setY(int newY) { y = newY; }
 void SimpGLNode::setRotation(int newRotation) { rotation = newRotation; }
 void SimpGLNode::setTag(int newTag) { tag = newTag; }
 
-void SimpGLUpdateManager::addUpdate(SimpGLNode* newToUpdate)
+void SimpGLManager::addUpdate(SimpGLNode* newToUpdate)
 {
     toUpdate.push_back(newToUpdate);
 }
-void SimpGLUpdateManager::addRender(SimpGLNode* newToRender)
+void SimpGLManager::addRender(SimpGLNode* newToRender)
 {
     toRender.push_back(newToRender);
 }
-void SimpGLUpdateManager::removeUpdate(SimpGLNode* toRemove)
+void SimpGLManager::removeUpdate(SimpGLNode* toRemove)
 {
     for (int i=0; i<toUpdate.size(); i++) {
         if (toUpdate.at(i) == toRemove) {
@@ -91,7 +91,7 @@ void SimpGLUpdateManager::removeUpdate(SimpGLNode* toRemove)
         }
     }
 }
-void SimpGLUpdateManager::removeRender(SimpGLNode* toRemove)
+void SimpGLManager::removeRender(SimpGLNode* toRemove)
 {
     for (int i=0; i<toRender.size(); i++) {
         if (toRender.at(i) == toRemove) {
@@ -100,16 +100,13 @@ void SimpGLUpdateManager::removeRender(SimpGLNode* toRemove)
         }
     }
 }
-void SimpGLUpdateManager::update(int value)
+void SimpGLManager::update()
 {
-    glutTimerFunc(1000/60, &SimpGLUpdateManager::update, 0);
-    
     for (int i=0; i<toUpdate.size(); i++) {
         toUpdate.at(i)->update();
     }
-    glutPostRedisplay();
 }
-void SimpGLUpdateManager::render()
+void SimpGLManager::render()
 {
     glLoadIdentity();
     glClear( GL_COLOR_BUFFER_BIT );
@@ -118,10 +115,10 @@ void SimpGLUpdateManager::render()
         toRender.at(i)->render();
     }
     
-    glutSwapBuffers();
+    glfwSwapBuffers();
 }
-std::vector<SimpGLNode*> SimpGLUpdateManager::toUpdate;
-std::vector<SimpGLNode*> SimpGLUpdateManager::toRender;
+std::vector<SimpGLNode*> SimpGLManager::toUpdate;
+std::vector<SimpGLNode*> SimpGLManager::toRender;
 
 
 
@@ -134,17 +131,24 @@ std::vector<SimpGLNode*> SimpGLUpdateManager::toRender;
 //fps: the frames per second you want the program to run at
 //updateFunc: function that will be called every frame specified by your frames per second
 //argc/argv: the argc/argv from your main, required by glut.
-bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string newResourcePath)
+bool SimpGLinitGL(int width, int height, std::string newResourcePath, std::string title)
 {
     screenHeight = height;
     screenWidth = width;
     SimpGLTextureCache::getInstance()->setResourcePath(newResourcePath);
-    glutInit( &argc, argv );
+    if(!glfwInit())
+    {
+        std::cout << "Unable to init GLFW!" << std::endl;
+        return false;
+    }
     
-	//Create Double Buffered Window
-	glutInitDisplayMode( GLUT_DOUBLE );
-	glutInitWindowSize( width, height );
-	glutCreateWindow( "OpenGL" );
+	if(!glfwOpenWindow(screenWidth, screenHeight, 0, 0, 0, 0, 0, 0, GLFW_WINDOW))
+    {
+        std::cout << "Unable to create window!" << std::endl;
+        glfwTerminate();
+        return false;
+    }
+    glfwSetWindowTitle(title.c_str());
     
 	glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
@@ -160,12 +164,6 @@ bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string new
     glEnable (GL_BLEND);
     glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-    glutIgnoreKeyRepeat(1);
-    glutKeyboardFunc(keyPressed);
-    glutSpecialFunc(keySpecial);
-    glutKeyboardUpFunc(keyUp);
-    glutSpecialUpFunc(keySpecialUp);
-    
     //Check for error
     GLenum error = glGetError();
     if( error != GL_NO_ERROR )
@@ -174,22 +172,29 @@ bool SimpGLinitGL(int width, int height, int argc, char* argv[], std::string new
         return false;
     }
     
-    for (int i=0; i<256; i++) {
-        keyStates[i] = false;
-        if (i<246) {
-            keySpecialStates[i] = false;
-        }
-    }
-    
-    glutDisplayFunc(&SimpGLUpdateManager::render);
-    glutTimerFunc(1000/60, &SimpGLUpdateManager::update, 0);
-    
     return true;
 }
 
-//Makes the coords relative to the lower left
-//as opposed to the upper left
-void processKeypress(unsigned char c, int &x, int &y)
+void SimpGLMainLoop()
 {
-    y = screenHeight - y;
+    double nextFrameTime = glfwGetTime();
+    double currTime;
+    while (!glfwGetKey(GLFW_KEY_ESC))
+    {
+        std::cout << currTime << ", " << nextFrameTime << std::endl;
+        currTime = glfwGetTime();
+        if(currTime >= nextFrameTime)
+        {
+            
+            //60 fps
+            nextFrameTime += (double)1/(double)60;
+            SimpGLManager::update();
+            if(currTime < nextFrameTime) SimpGLManager::render();
+        } else
+        {
+            glfwSleep(nextFrameTime-currTime);
+        }
+    }
+    
+    glfwTerminate();
 }
