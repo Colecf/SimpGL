@@ -33,7 +33,7 @@ void SimpGLSprite::render()
     }
     
     glPushMatrix();
-        glColor4f(1, 1, 1, opacity);
+        glColor4f(red, green, blue, opacity);
         glTranslatef(x, y, 0);
         //The 0, 0, 1, is the vector we're rotating around
         glRotatef(rotation, 0, 0, 1);
@@ -68,6 +68,12 @@ void SimpGLSprite::setRotation(int newRotation)
     }
     rotation = newRotation;
 }
+void SimpGLSprite::setColor(float r, float g, float b)
+{
+    red = r;
+    green = g;
+    blue = b;
+}
 
 SimpGLAnimatedSprite::SimpGLAnimatedSprite(std::string fileName, int newFrameWidth, int newFrameHeight,
                                            int newTotalFrames, int newDeltaFrame)
@@ -79,10 +85,14 @@ SimpGLAnimatedSprite::SimpGLAnimatedSprite(std::string fileName, int newFrameWid
     frameHeight = newFrameHeight;
     deltaFrame = newDeltaFrame;
     totalFrames = newTotalFrames;
+    red = 1;
+    green = 1;
+    blue = 1;
 }
 SimpGLAnimatedSprite::~SimpGLAnimatedSprite()
 {
-    SimpGLSprite::~SimpGLSprite();
+    //Windows computers don't like this for some reason
+    //SimpGLSprite::~SimpGLSprite();
 }
 
 void SimpGLAnimatedSprite::render()
@@ -99,7 +109,7 @@ void SimpGLAnimatedSprite::render()
     }
     
     glPushMatrix();
-        glColor4f(1, 1, 1, opacity);
+        glColor4f(red, green, blue, opacity);
         glTranslatef(x, y, 0);
         //The 0, 0, 1, is the vector we're rotating around
         glRotatef(rotation, 0, 0, 1);

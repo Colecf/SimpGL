@@ -28,6 +28,8 @@ public:
     void setHeight(int newHeight);
     void setRotation(int newRotation);
     void setOpacity(float newOpacity);
+    void setColor(float r, float g, float b);
+    
     
 protected:
     //typedef SimpGLNode super;
@@ -35,6 +37,7 @@ protected:
     SimpGLTexture *texture;
     
     int width, height;
+    float red, green, blue;
     float opacity;
 };
 

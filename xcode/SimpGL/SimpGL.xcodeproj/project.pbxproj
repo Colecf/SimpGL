@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EDB6BE7C16C485E400C774A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */; };
+		EDB6BE7D16C485E500C774A4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF903AD168FBB7200E97994 /* OpenGL.framework */; };
+		EDB6BE7E16C4869500C774A4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */; };
 		EDE0E9FC16ACA5D900E88DEA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */; };
 		EDE0EA0616ACA6FB00E88DEA /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */; };
 		EDF90377168FB13F00E97994 /* OpenGLHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF9036A168FB13F00E97994 /* OpenGLHeaders.h */; };
@@ -54,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED58ED2816C48A2C002EBD00 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfreetype.a; path = ../../../../../../usr/local/lib/libfreetype.a; sourceTree = "<group>"; };
 		EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		EDF90363168FB13200E97994 /* libSimpGL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSimpGL.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDB6BE7E16C4869500C774A4 /* IOKit.framework in Frameworks */,
+				EDB6BE7C16C485E400C774A4 /* Cocoa.framework in Frameworks */,
 				EDF90397168FB5F000E97994 /* libpng.framework in Frameworks */,
+				EDB6BE7D16C485E500C774A4 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +107,7 @@
 		EDF90358168FB13200E97994 = {
 			isa = PBXGroup;
 			children = (
+				ED58ED2816C48A2C002EBD00 /* libfreetype.a */,
 				EDE0EA0516ACA6FB00E88DEA /* IOKit.framework */,
 				EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */,
 				EDF903AD168FBB7200E97994 /* OpenGL.framework */,
@@ -303,6 +311,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = /usr/local/lib/libglfw.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -315,6 +324,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
+				OTHER_LDFLAGS = /usr/local/lib/libglfw.a;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

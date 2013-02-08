@@ -25,6 +25,7 @@ public:
         SimpGLSprite* test = new SimpGLSprite("pngtest.png");
         test->setX(200);
         test->setY(200);
+        test->setColor(0.3, 0.3, 1.0);
         addChild(test);
     }
     
