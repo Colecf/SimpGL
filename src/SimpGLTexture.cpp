@@ -177,6 +177,11 @@ SimpGLTexture::SimpGLTexture(std::string texName)
 
 }
 
+SimpGLTexture::~SimpGLTexture()
+{
+    glDeleteTextures(1, &texID);
+}
+
 void SimpGLTexture::render(int x, int y)
 {
     if (texID == 0) {

@@ -55,7 +55,7 @@ void SimpGLNode::addChild(SimpGLNode* newChild){ children->push_back(newChild); 
 
 void SimpGLNode::removeChild(SimpGLNode* child)
 {
-    int spotToRemove;
+    int spotToRemove = 0;
     for (int i=0; i<children->size(); i++) {
         if (children->at(i) == child) {
             spotToRemove = i;

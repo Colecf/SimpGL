@@ -25,6 +25,7 @@ public:
     static bool loadPngImage(char *name, int &outWidth, int &outHeight, bool &outHasAlpha, GLubyte **outData);
     
     SimpGLTexture(std::string);
+    ~SimpGLTexture();
     void render(int x, int y);
     
     
@@ -69,8 +70,6 @@ private:
     SimpGLTextureCache(){};  // Private so that it can  not be called
     SimpGLTextureCache(SimpGLTextureCache const&){};             // copy constructor is private
     SimpGLTextureCache& operator=(SimpGLTextureCache const&){};  // assignment operator is private
-    
-    
 };
 
 

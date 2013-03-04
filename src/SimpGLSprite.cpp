@@ -12,8 +12,8 @@
 
 SimpGLSprite::SimpGLSprite(std::string fileName)
 {
-    x = 0;
-    y = 0;
+    x = y = 0;
+    red = green = blue = 0.0;
     rotation = 0;
     opacity = 1;
     texture = SimpGLTextureCache::getInstance()->getTextureFromFileName(fileName);
