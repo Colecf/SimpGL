@@ -9,6 +9,7 @@
 #include "SimpGL.h"
 #include "OpenGLHeaders.h"
 #include "SimpGLTexture.h"
+#include "SimpGLFont.h"
 #include <iostream>
 
 int screenWidth;
@@ -172,6 +173,8 @@ bool SimpGLinitGL(int width, int height, std::string newResourcePath, std::strin
         return false;
     }
     
+    SimpGLInitFonts();
+    
     return true;
 }
 
@@ -181,11 +184,9 @@ void SimpGLMainLoop()
     double currTime;
     while (!glfwGetKey(GLFW_KEY_ESC))
     {
-        std::cout << currTime << ", " << nextFrameTime << std::endl;
         currTime = glfwGetTime();
         if(currTime >= nextFrameTime)
         {
-            
             //60 fps
             nextFrameTime += (double)1/(double)60;
             SimpGLManager::update();

@@ -60,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED50C82C16FE4FEE00B030DE /* VeraIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = VeraIt.ttf; sourceTree = "<group>"; };
 		EDB189F316C7450F000EAA5F /* SimpGLFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SimpGLFont.cpp; path = ../../src/SimpGLFont.cpp; sourceTree = "<group>"; };
 		EDB189F416C7450F000EAA5F /* SimpGLFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpGLFont.h; path = ../../src/SimpGLFont.h; sourceTree = "<group>"; };
 		EDE0E9FB16ACA5D900E88DEA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -143,6 +144,7 @@
 		EDF9039E168FB63500E97994 /* SimpGLTest */ = {
 			isa = PBXGroup;
 			children = (
+				ED50C82C16FE4FEE00B030DE /* VeraIt.ttf */,
 				EDF903B3168FC23B00E97994 /* pngtest.png */,
 				EDF9039F168FB63500E97994 /* main.cpp */,
 				EDF903A1168FB63500E97994 /* SimpGLTest.1 */,
@@ -354,15 +356,21 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
+					/usr/local/bin,
+					/opt/local/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lm",
 					/usr/local/lib/libglfw.a,
+					"-lfreetype",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -375,15 +383,21 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					/usr/local/include/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SDKROOT)/usr/lib/system\"",
+					/usr/local/bin,
+					/opt/local/lib,
 				);
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lm",
 					/usr/local/lib/libglfw.a,
+					"-lfreetype",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

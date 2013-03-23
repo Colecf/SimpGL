@@ -16,6 +16,8 @@ class SimpGLFont
 {
 public:
     SimpGLFont(std::string fileName);
+    ~SimpGLFont();
+    void render(float x, float y, std::string text);
 private:
     int size;
     GLuint *textures;

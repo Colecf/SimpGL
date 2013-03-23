@@ -10,10 +10,12 @@
 #include "SimpGL.h"
 #include "OpenGLHeaders.h"
 #include "SimpGLSprite.h"
+#include "SimpGLFont.h"
 
 class MainScene : public SimpGLNode
 {
 public:
+    SimpGLFont *font;
     MainScene()
     {
         std::cout << "Hello, World!\n" << std::endl;
@@ -27,6 +29,8 @@ public:
         test->setY(200);
         test->setColor(0.3, 0.3, 1.0);
         addChild(test);
+        
+        font = new SimpGLFont("VeraIt.ttf");
     }
     
     void render()
@@ -37,15 +41,18 @@ public:
         glTranslatef(10, 10, 0);
         glBegin(GL_QUADS);
         glVertex2f(0, 0);
-        glVertex2f(0, 50);
-        glVertex2f(50, 50);
-        glVertex2f(50, 0);
+        glVertex2f(0, 500);
+        glVertex2f(500, 500);
+        glVertex2f(500, 0);
         glEnd();
+        
+        glColor3f(0, 1, 0);
+        
+        font->render(320, 200, "Hello, world!");
     }
     
     void update()
     {
-        std::cout << "here" << std::endl;
     }
     
     
