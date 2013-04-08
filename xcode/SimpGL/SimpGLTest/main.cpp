@@ -37,15 +37,6 @@ public:
     {
         SimpGLNode::render();
         
-        glColor3f(1, 0, 0);
-        glTranslatef(10, 10, 0);
-        glBegin(GL_QUADS);
-        glVertex2f(0, 0);
-        glVertex2f(0, 500);
-        glVertex2f(500, 500);
-        glVertex2f(500, 0);
-        glEnd();
-        
         glColor3f(0, 1, 0);
         
         font->render(320, 200, "Hello, world!");
