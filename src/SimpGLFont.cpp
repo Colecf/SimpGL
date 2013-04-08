@@ -51,10 +51,11 @@ namespace  {
     }
 }
 
-SimpGLFont::SimpGLFont(std::string filename)
+SimpGLFont::SimpGLFont(std::string newFilename)
 {
-    
     if(!enabled) return;
+    references = 1;
+    filename = newFilename;
     textures = new GLuint[128];
     FT_Face face;
     int error = FT_New_Face(ftLibrary, filename.c_str(), 0, &face);
@@ -149,6 +150,11 @@ SimpGLFont::SimpGLFont(std::string filename)
     FT_Done_Face(face);
 }
 
+std::string SimpGLFont::getFilename()
+{
+    return filename;
+}
+
 SimpGLFont::~SimpGLFont()
 {
     glDeleteLists(listbase, 128);
@@ -219,3 +225,90 @@ void SimpGLInitFonts()
         enabled = false;
     }
 }
+
+SimpGLFontCache* SimpGLFontCache::instance = NULL;
+
+SimpGLFontCache* SimpGLFontCache::getInstance()
+{
+    if(!instance)
+    {
+        instance = new SimpGLFontCache;
+    }
+    
+    return instance;
+}
+
+SimpGLFont* SimpGLFontCache::getFontFromFileName(std::string filename)
+{
+    filename = SimpGLManager::getResourcePath() + filename;
+    SimpGLFont* font;
+    for (int i=0; i<fonts.size(); i++) {
+        font = fonts.at(i);
+        if (font->getFilename().compare(filename) == 0) {
+            font->references++;
+            return font;
+        }
+    }
+    
+    font = new SimpGLFont(filename);
+    fonts.push_back(font);
+    return font;
+}
+
+void SimpGLFontCache::releaseFont(SimpGLFont* fontToRelease)
+{
+    SimpGLFont* font;
+    int fontToErase = -1;
+    for (int i=0; i<fonts.size(); i++) {
+        font = fonts.at(i);
+        if (font == fontToRelease) {
+            
+            font->references--;
+            if (font->references == 0) {
+                fontToErase = i;
+                break;
+            }
+        }
+    }
+    
+    if (fontToErase == -1) {
+        return;
+    }
+    std::cout << "Deleting font: " << fontToRelease->getFilename() << std::endl;
+    fonts.erase(fonts.begin()+fontToErase);
+    delete font;
+}
+
+SimpGLLabel::SimpGLLabel(std::string fontName)
+{
+    text = "Default text!";
+    font = SimpGLFontCache::getInstance()->getFontFromFileName(fontName);
+}
+
+SimpGLLabel::~SimpGLLabel()
+{
+    SimpGLFontCache::getInstance()->releaseFont(font);
+}
+
+void SimpGLLabel::setText(std::string newText)
+{
+    text = newText;
+}
+
+std::string SimpGLLabel::getText()
+{
+    return text;
+}
+
+void SimpGLLabel::setFont(std::string fontName)
+{
+    SimpGLFontCache::getInstance()->releaseFont(font);
+    font = SimpGLFontCache::getInstance()->getFontFromFileName(fontName);
+}
+
+void SimpGLLabel::render()
+{
+    SimpGLNode::render();
+    font->render(x, y, text);
+}
+

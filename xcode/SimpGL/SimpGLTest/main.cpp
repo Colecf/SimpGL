@@ -15,7 +15,7 @@
 class MainScene : public SimpGLNode
 {
 public:
-    SimpGLFont *font;
+    SimpGLLabel *label;
     MainScene()
     {
         std::cout << "Hello, World!\n" << std::endl;
@@ -30,7 +30,11 @@ public:
         test->setColor(0.3, 0.3, 1.0);
         addChild(test);
         
-        font = new SimpGLFont("VeraIt.ttf");
+        label = new SimpGLLabel("VeraIt.ttf");
+        label->setText("Hello, world!");
+        label->setX(250);
+        label->setY(100);
+        addChild(label);
     }
     
     void render()
@@ -39,7 +43,6 @@ public:
         
         glColor3f(0, 1, 0);
         
-        font->render(320, 200, "Hello, world!");
     }
     
     void update()

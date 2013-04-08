@@ -37,7 +37,6 @@ protected:
     SimpGLTexture *texture;
     
     int width, height;
-    float red, green, blue;
     float opacity;
 };
 

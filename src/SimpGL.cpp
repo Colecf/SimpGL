@@ -18,8 +18,8 @@ int screenHeight;
 SimpGLNode::SimpGLNode()
 {
     children = new std::vector<SimpGLNode*>;
-    x = 0;
-    y = 0;
+    x = y = 0;
+    red = green = blue = 1.0;
 }
 SimpGLNode::~SimpGLNode()
 {
@@ -28,6 +28,7 @@ SimpGLNode::~SimpGLNode()
 }
 void SimpGLNode::render()
 {
+    glColor3f(red, green, blue);
     for (int i=0; i<children->size(); i++) {
         children->at(i)->render();
     }
@@ -120,9 +121,17 @@ void SimpGLManager::render()
 }
 std::vector<SimpGLNode*> SimpGLManager::toUpdate;
 std::vector<SimpGLNode*> SimpGLManager::toRender;
+std::string SimpGLManager::resourcePath;
 
+std::string SimpGLManager::getResourcePath()
+{
+    return resourcePath;
+}
 
-
+void SimpGLInitHelper::run(std::string resourcePath)
+{
+    SimpGLManager::resourcePath = resourcePath;
+}
 
 //Inits OpenGL and GLUT
 //Parameters:
@@ -136,7 +145,8 @@ bool SimpGLinitGL(int width, int height, std::string newResourcePath, std::strin
 {
     screenHeight = height;
     screenWidth = width;
-    SimpGLTextureCache::getInstance()->setResourcePath(newResourcePath);
+    SimpGLInitHelper helper;
+    helper.run(newResourcePath);
     if(!glfwInit())
     {
         std::cout << "Unable to init GLFW!" << std::endl;

@@ -39,6 +39,7 @@ public:
 protected:
     std::vector<SimpGLNode*> *children;
     int x, y, rotation, tag;
+    float red, green, blue;
 };
 
 class SimpGLManager
@@ -53,9 +54,21 @@ public:
     static void update();
     static void render();
     
+    static std::string getResourcePath();
+    
 private:
     static std::vector<SimpGLNode*> toUpdate;
     static std::vector<SimpGLNode*> toRender;
+    
+    static std::string resourcePath;
+    friend class SimpGLInitHelper;
+};
+
+class SimpGLInitHelper
+{
+public:
+    friend class SimpGLManager;
+    void run(std::string resourcePath);
 };
 
 bool SimpGLinitGL(int width, int height, std::string newResourcePath, std::string title);

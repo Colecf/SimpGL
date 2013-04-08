@@ -58,14 +58,11 @@ public:
     static SimpGLTextureCache* getInstance();
     SimpGLTexture* getTextureFromFileName(std::string fileName);
     void releaseTexture(SimpGLTexture* texToRelease);
-    void setResourcePath(std::string newResourcePath);
-    std::string getResourcePath();
     
 private:
     
     std::vector<SimpGLTexture*> textures;
     static SimpGLTextureCache* instance;
-    static std::string resourcePath;
     
     SimpGLTextureCache(){};  // Private so that it can  not be called
     SimpGLTextureCache(SimpGLTextureCache const&){};             // copy constructor is private
